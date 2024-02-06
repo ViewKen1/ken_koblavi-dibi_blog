@@ -1,0 +1,90 @@
+{"type":"HTTP","requestId":"670049da-1c73-4501-8f9f-c710de756b4d","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"670049da-1c73-4501-8f9f-c710de756b4d","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"670049da-1c73-4501-8f9f-c710de756b4d","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"daf40a74-12a6-4216-92b6-cf5a95d22094","method":"POST","url":"/api/users"}
+{"type":"SQL","requestId":"daf40a74-12a6-4216-92b6-cf5a95d22094","sql":"select \"users\".* from \"users\" where \"email\" = $1","bindings":["ken@ken.fr"]}
+{"type":"SQL","requestId":"daf40a74-12a6-4216-92b6-cf5a95d22094","sql":"insert into \"users\" (\"email\", \"passwordHash\", \"passwordSalt\") values ($1, $2, $3) returning \"id\"","bindings":["ken@ken.fr","63d919ebad193b1cb09bc4b52bb3655840a2ce2d6967d3cb0932b5879a7b3d09d43375ae970d8d6fd2f4cfeaeae172b4de3e6bc2941c63d0d9d43b37552e4b0856abae44adf707ef6e898e42fc012569da4cf118236c821da312a719d01552bb8d3eb738e11f4b2734253c03959aedbef592662be57002e9117b68344824f94c9b2ea4c009aacf28327f65cadcf494f51965cf0b14cd63ea12d8301b8744537d5bcd0e89d4f2d3800e42aeaf75adb029fc73526c65ede97c36ab265f1d73ca5c5bbf77da7bc5ec7bd56b066bf3bba3a3f2f9a63e49d29ab2c69e4ceaf8da3b8ab5115b2ea5c97c110f0ae16fe5b38f10101a578716038f6d1f6d2220db86780c","714731e0866ade6672a7c4a567e43a5a09fcef269f27a89ec4c88a98929046226aaa38e770e826705f7750fef1f9469bcac9a4554894cc5e36c1708e383063edd8f30e431578e015f3ae4b88f8ab1599c45af13cbe84be4cb5e8505a056557ffbc233b179221bb1683f41eac3d6dacc4aa7a639c6ed1b57416f2e8bf2969ed89"]}
+{"type":"HTTP","requestId":"c1116527-e744-46d4-93b0-1e387c007b91","method":"POST","url":"/api/sessions"}
+{"type":"SQL","requestId":"c1116527-e744-46d4-93b0-1e387c007b91","sql":"select \"users\".* from \"users\" where \"email\" = $1","bindings":["ken@ken.fr"]}
+{"type":"HTTP","requestId":"a3a503d7-47e9-4c8f-a5ee-d9270957b172","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"a3a503d7-47e9-4c8f-a5ee-d9270957b172","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"a3a503d7-47e9-4c8f-a5ee-d9270957b172","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"0aa81ce3-444d-4ff3-8632-76530ca3c781","method":"GET","url":"/api/users?userId=2"}
+{"type":"SQL","requestId":"0aa81ce3-444d-4ff3-8632-76530ca3c781","sql":"select \"users\".* from \"users\" where \"users\".\"id\" = $1","bindings":[2]}
+{"type":"HTTP","requestId":"b95f3a00-6b42-4072-9d05-79d66602f8df","method":"GET","url":"/api/users?userId=2"}
+{"type":"SQL","requestId":"b95f3a00-6b42-4072-9d05-79d66602f8df","sql":"select \"users\".* from \"users\" where \"users\".\"id\" = $1","bindings":[2]}
+{"type":"HTTP","requestId":"282d8d0d-cf8a-4783-aa56-5a69a4cc83e8","method":"POST","url":"/api/posts/2"}
+{"type":"SQL","requestId":"282d8d0d-cf8a-4783-aa56-5a69a4cc83e8","sql":"insert into \"posts\" (\"description\", \"iduser\", \"title\") values ($1, $2, $3) returning \"id\"","bindings":["une ligue ou le psg1 est roi ",2,"Bienvenue dans la farmer league"]}
+{"type":"HTTP","requestId":"7667c688-271f-46bb-8b65-e51119791d1b","method":"GET","url":"/api/posts/2?postId=1"}
+{"type":"SQL","requestId":"7667c688-271f-46bb-8b65-e51119791d1b","sql":"select \"posts\".* from \"posts\" where \"posts\".\"id\" = $1","bindings":[1]}
+{"type":"SQL","requestId":"7667c688-271f-46bb-8b65-e51119791d1b","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[2]}
+{"type":"HTTP","requestId":"ccaea806-2e12-4283-8655-1e38b12675cf","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"ccaea806-2e12-4283-8655-1e38b12675cf","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"ccaea806-2e12-4283-8655-1e38b12675cf","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[2]}
+{"type":"SQL","requestId":"ccaea806-2e12-4283-8655-1e38b12675cf","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"953b68fe-f7d5-41a2-9e47-f3b2e576d06b","method":"GET","url":"/api/posts/2?postId=1"}
+{"type":"SQL","requestId":"953b68fe-f7d5-41a2-9e47-f3b2e576d06b","sql":"select \"posts\".* from \"posts\" where \"posts\".\"id\" = $1","bindings":[1]}
+{"type":"SQL","requestId":"953b68fe-f7d5-41a2-9e47-f3b2e576d06b","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[2]}
+{"type":"HTTP","requestId":"d70be326-e6a8-411a-9faa-efca1fe2c554","method":"GET","url":"/api/allcomments?postId=1"}
+{"type":"SQL","requestId":"d70be326-e6a8-411a-9faa-efca1fe2c554","sql":"select \"comments\".* from \"comments\" where \"post_id\" = $1","bindings":[1]}
+{"type":"HTTP","requestId":"8ea7a894-9aae-4df5-8701-74e1bb5c2dc6","method":"POST","url":"/api/comments"}
+{"type":"SQL","requestId":"8ea7a894-9aae-4df5-8701-74e1bb5c2dc6","sql":"insert into \"comments\" (\"description\", \"iduser\", \"post_id\") values ($1, $2, $3) returning \"id\"","bindings":["une des pires equiupes que j'ai vu ",2,1]}
+{"type":"SQL","requestId":"8ea7a894-9aae-4df5-8701-74e1bb5c2dc6","sql":"select \"comments\".* from \"comments\" where \"comments\".\"id\" in ($1)","bindings":[1]}
+{"type":"HTTP","requestId":"15481c1b-a6f8-402e-b66c-de4379fb6a4b","method":"GET","url":"/api/allcomments?postId=1"}
+{"type":"SQL","requestId":"15481c1b-a6f8-402e-b66c-de4379fb6a4b","sql":"select \"comments\".* from \"comments\" where \"post_id\" = $1","bindings":[1]}
+{"type":"HTTP","requestId":"25550382-e862-4fbe-ace8-ac57a8571be2","method":"DELETE","url":"/api/sessions"}
+{"type":"HTTP","requestId":"66336117-c2c1-4773-82e0-bbf3e90ecf43","method":"POST","url":"/api/users"}
+{"type":"SQL","requestId":"66336117-c2c1-4773-82e0-bbf3e90ecf43","sql":"select \"users\".* from \"users\" where \"email\" = $1","bindings":["karl@karl.fr"]}
+{"type":"SQL","requestId":"66336117-c2c1-4773-82e0-bbf3e90ecf43","sql":"insert into \"users\" (\"email\", \"passwordHash\", \"passwordSalt\") values ($1, $2, $3) returning \"id\"","bindings":["karl@karl.fr","baef2b4625799a75bc1b0000a1c65105b1f94c3770651fafd4713809dfba6401d5fd1d43fcc4dfce7e4a9a54b0748ebb814cda424c07ab9271c30bc95e7be75f35a2af93a9e47d61ceefac7a9a346f4f5b8da8f648006302a3bd11658d8d7159546f63ff6ee71fadb216e485a8e56ccee480b9070df0738e36a04334b3d62abd225fe4ace973f4a1a430525324152d936b6349f6c9896c6f4f7c5265da0cf34f89a2460df3ab48a9bb562b119e84668fc1e80ebd197caaaa42fbb14442bf4e882422c7c96da96eda6142aee0489347ced27aae7158d077d5147c89dcc6751610be4b4a32a3ae8a226ed1e4ad62d1983ebb9ea84b277c4aa4a5d1793a0b0e8e9b","a8823eedfced2f1429fafb3717946388fdb54219954024ff91e6063ac54af5659b989e0a93bdcf8a53d86219821cee15136afaf4700a02cb028f97774753fc3480684be9210a5b5e8a1e987272d899df3feb7f03879fab803d890fdae697996df4d23e7f41f81f00ca87763b7c887905e437abe361e72efebbd843f9cf86ef60"]}
+{"type":"HTTP","requestId":"7fc8dff1-96e5-43a8-8c7b-7a64011a4f20","method":"POST","url":"/api/sessions"}
+{"type":"SQL","requestId":"7fc8dff1-96e5-43a8-8c7b-7a64011a4f20","sql":"select \"users\".* from \"users\" where \"email\" = $1","bindings":["karl@karl.fr"]}
+{"type":"HTTP","requestId":"b420db4c-26c2-45c8-bb7c-c2bcc9ec4e0b","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"b420db4c-26c2-45c8-bb7c-c2bcc9ec4e0b","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"b420db4c-26c2-45c8-bb7c-c2bcc9ec4e0b","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[2]}
+{"type":"SQL","requestId":"b420db4c-26c2-45c8-bb7c-c2bcc9ec4e0b","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"8a280a0c-445a-473c-b440-0d8f300e5ec1","method":"GET","url":"/api/allcomments?postId=1"}
+{"type":"HTTP","requestId":"5a2205f1-618d-4018-8ff5-51f72874b0d0","method":"GET","url":"/api/posts/3?postId=1"}
+{"type":"SQL","requestId":"8a280a0c-445a-473c-b440-0d8f300e5ec1","sql":"select \"comments\".* from \"comments\" where \"post_id\" = $1","bindings":[1]}
+{"type":"SQL","requestId":"5a2205f1-618d-4018-8ff5-51f72874b0d0","sql":"select \"posts\".* from \"posts\" where \"posts\".\"id\" = $1","bindings":[1]}
+{"type":"SQL","requestId":"5a2205f1-618d-4018-8ff5-51f72874b0d0","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[2]}
+{"type":"HTTP","requestId":"e1391615-39b0-48c8-a569-a510dc501767","method":"POST","url":"/api/comments"}
+{"type":"SQL","requestId":"e1391615-39b0-48c8-a569-a510dc501767","sql":"insert into \"comments\" (\"description\", \"iduser\", \"post_id\") values ($1, $2, $3) returning \"id\"","bindings":["vraiment d'accord avec toi ",3,1]}
+{"type":"SQL","requestId":"e1391615-39b0-48c8-a569-a510dc501767","sql":"select \"comments\".* from \"comments\" where \"comments\".\"id\" in ($1)","bindings":[2]}
+{"type":"HTTP","requestId":"369536c3-5142-4304-b165-e25711efb786","method":"GET","url":"/api/allcomments?postId=1"}
+{"type":"SQL","requestId":"369536c3-5142-4304-b165-e25711efb786","sql":"select \"comments\".* from \"comments\" where \"post_id\" = $1","bindings":[1]}
+{"type":"HTTP","requestId":"61c064c7-5b61-4108-911c-ff493e2f1476","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"61c064c7-5b61-4108-911c-ff493e2f1476","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"61c064c7-5b61-4108-911c-ff493e2f1476","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[2]}
+{"type":"SQL","requestId":"61c064c7-5b61-4108-911c-ff493e2f1476","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"0df80477-7e21-42c1-a6ed-f6e679ffab31","method":"POST","url":"/api/posts/3"}
+{"type":"SQL","requestId":"0df80477-7e21-42c1-a6ed-f6e679ffab31","sql":"insert into \"posts\" (\"description\", \"iduser\", \"title\") values ($1, $2, $3) returning \"id\"","bindings":["une des meilleur equipe de l'histoire du foot",3,"real de madrid "]}
+{"type":"HTTP","requestId":"f4cdf1f1-526b-4f68-bd65-d77c6710bc1d","method":"GET","url":"/api/posts/3?postId=2"}
+{"type":"SQL","requestId":"f4cdf1f1-526b-4f68-bd65-d77c6710bc1d","sql":"select \"posts\".* from \"posts\" where \"posts\".\"id\" = $1","bindings":[2]}
+{"type":"SQL","requestId":"f4cdf1f1-526b-4f68-bd65-d77c6710bc1d","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[3]}
+{"type":"HTTP","requestId":"1e6071ca-c1b3-4ec4-8740-b9d6f18d8ac6","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"1e6071ca-c1b3-4ec4-8740-b9d6f18d8ac6","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"1e6071ca-c1b3-4ec4-8740-b9d6f18d8ac6","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1, $2)","bindings":[2,3]}
+{"type":"SQL","requestId":"1e6071ca-c1b3-4ec4-8740-b9d6f18d8ac6","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"9523ca05-8f6e-42fb-aead-af982e52ee9b","method":"GET","url":"/api/posts/3?postId=2"}
+{"type":"SQL","requestId":"9523ca05-8f6e-42fb-aead-af982e52ee9b","sql":"select \"posts\".* from \"posts\" where \"posts\".\"id\" = $1","bindings":[2]}
+{"type":"SQL","requestId":"9523ca05-8f6e-42fb-aead-af982e52ee9b","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[3]}
+{"type":"HTTP","requestId":"77742fc8-0d24-443f-b5d7-4d4921a4f706","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"77742fc8-0d24-443f-b5d7-4d4921a4f706","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"77742fc8-0d24-443f-b5d7-4d4921a4f706","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1, $2)","bindings":[2,3]}
+{"type":"SQL","requestId":"77742fc8-0d24-443f-b5d7-4d4921a4f706","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"28867291-dfd5-4ec0-9c2a-29b8d61d7793","method":"GET","url":"/api/allcomments?postId=2"}
+{"type":"HTTP","requestId":"1a02db29-7625-40ff-a4f6-c063e7232ebc","method":"GET","url":"/api/posts/3?postId=2"}
+{"type":"SQL","requestId":"28867291-dfd5-4ec0-9c2a-29b8d61d7793","sql":"select \"comments\".* from \"comments\" where \"post_id\" = $1","bindings":[2]}
+{"type":"SQL","requestId":"1a02db29-7625-40ff-a4f6-c063e7232ebc","sql":"select \"posts\".* from \"posts\" where \"posts\".\"id\" = $1","bindings":[2]}
+{"type":"SQL","requestId":"1a02db29-7625-40ff-a4f6-c063e7232ebc","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1)","bindings":[3]}
+{"type":"HTTP","requestId":"62da9905-e805-4198-ab4b-bfa7eeea98d9","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"62da9905-e805-4198-ab4b-bfa7eeea98d9","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"62da9905-e805-4198-ab4b-bfa7eeea98d9","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1, $2)","bindings":[2,3]}
+{"type":"SQL","requestId":"62da9905-e805-4198-ab4b-bfa7eeea98d9","sql":"select count(*) from \"posts\"","bindings":[]}
+{"type":"HTTP","requestId":"a427f6c6-ef87-4010-89cc-20c212cb0064","method":"GET","url":"/api/users?userId=3"}
+{"type":"SQL","requestId":"a427f6c6-ef87-4010-89cc-20c212cb0064","sql":"select \"users\".* from \"users\" where \"users\".\"id\" = $1","bindings":[3]}
+{"type":"HTTP","requestId":"95b3435c-5f65-4bbc-802f-a566e7dd53d7","method":"DELETE","url":"/api/sessions"}
+{"type":"HTTP","requestId":"23a230ae-2121-4930-b6ce-0ce89fdcb04e","method":"GET","url":"/api/posts?page=1"}
+{"type":"SQL","requestId":"23a230ae-2121-4930-b6ce-0ce89fdcb04e","sql":"select \"posts\".* from \"posts\" limit $1","bindings":[5]}
+{"type":"SQL","requestId":"23a230ae-2121-4930-b6ce-0ce89fdcb04e","sql":"select \"users\".* from \"users\" where \"users\".\"id\" in ($1, $2)","bindings":[2,3]}
+{"type":"SQL","requestId":"23a230ae-2121-4930-b6ce-0ce89fdcb04e","sql":"select count(*) from \"posts\"","bindings":[]}
